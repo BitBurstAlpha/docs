@@ -1,0 +1,72 @@
+---
+title: "Customization"
+description: "When using the [low-code](#low-code) approach, you can configure the Chatbot's behavior by adding attributes to the `ab-chat` element or by giving the React component props.
+"
+---
+
+<Tabs>
+  <Tab title="HTML">
+    ```javascript HTML
+<ab-chat
+  chatbotID="YOUR-CHATBOT-ID"
+  theme="dark"
+  orientation="left"
+  color="#ff0000"
+  logoURL="https://example.com/logo.png"
+  headline="Chat with our AI"
+  description="Ask me anything, and I'll do my best to answer!"
+  initialMessage="Hello 👋 How can I help you today?"
+  initialMessagePopupDelay="5"
+  placeholder="Type your message here..."
+  newChatButtonText="Start a new chat"
+  backToChatButtonText="Back to chat"
+  faqButtonText="See FAQ"
+  ticketButtonText="Create a ticket"
+  hideButton="true"
+  policyDescription="Please accept our privacy policy to continue."
+  policyLinkTitle="Privacy Policy"
+  policyLinkURL="https://example.com/privacy-policy"
+  policyAcceptButtonText="Yes, got it"
+  dataCollectionMessage="Let's get your name and email so we can follow up with you"
+  dataCollectionNamePlaceholder="Your name"
+  dataCollectionEmailPlaceholder="Your email"
+  dataCollectionButtonText="Add information"
+></ab-chat>
+```
+  </Tab>
+  <Tab title="React">
+    ```javascript React
+import { Chat } from '@aidbase/chat';
+ 
+<Chat
+  chatbotID="YOUR-CHATBOT-ID"
+  theme="dark"
+  orientation="left"
+  color="#ff0000"
+  logoURL="https://example.com/logo.png"
+  headline="Chat with our AI"
+  description="Ask me anything, and I'll do my best to answer!"
+  initialMessage="Hello 👋 How can I help you today?"
+  initialMessagePopupDelay={5}
+  placeholder="Type your message here..."
+  newChatButtonText="Start a new chat"
+  backToChatButtonText="Back to chat"
+  faqButtonText="See FAQ"
+  ticketButtonText="Create a ticket"
+  hideButton
+  policyDescription="Please accept our privacy policy to continue."
+  policyLinkTitle="Privacy Policy"
+  policyLinkURL="https://example.com/privacy-policy"
+  policyAcceptButtonText="Yes, got it"
+  dataCollectionMessage="Let's get your name and email so we can follow up with you"
+  dataCollectionNamePlaceholder="Your name"
+  dataCollectionEmailPlaceholder="Your email"
+  dataCollectionButtonText="Add information"
+/>
+```
+  </Tab>
+</Tabs>
+
+When you add an attribute to the `ab-chat` or `Chat` element, this value will **override** the value in the Chatbot settings.
+
+See all the available attributes in the [Chatbot Reference](#chatbot-reference).

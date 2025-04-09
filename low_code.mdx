@@ -1,0 +1,48 @@
+---
+title: "Low Code"
+description: "Install on your website"
+---
+If you want more control over the Chatbot, you can add it to your webpage as an HTML element, or install it in your React application using NPM.
+
+<Tabs>
+  <Tab title="HTML" >
+    <Steps>
+  <Step title="In the head section">
+    ```javascript HTML
+<script async type="text/javascript" src="https://client.aidbase.ai/chat.ab.js"></script>;
+```
+  </Step>
+  <Step title="In the body section">
+    ```javascript HTML
+<ab-chat chatbotID="YOUR-CHATBOT-ID"></ab-chat>;
+```
+Replace `YOUR-CHATBOT-ID` with the ID of your Chatbot.  
+You can place the Chatbot element anywhere in your HTML.
+<Tip>You can find the Chatbot ID in the Chatbot settings under the Settings tab.</Tip>
+  </Step>
+</Steps>
+  </Tab>
+
+
+  <Tab title="React" icon="pickaxe">
+    <Steps>
+  <Step title="Install the chat package">
+    ```javascript Command
+npm install @aidbase/chat"
+```
+  </Step>
+  <Step title="Use the chat component">
+    ```javascript React
+import { Chat } from '@aidbase/chat';
+ 
+<Chat chatbotID="YOUR-CHATBOT-ID" />
+```
+
+Replace `YOUR-CHATBOT-ID` with the ID of your Chatbot.  
+You can place the Chatbot element anywhere in your React.
+<Tip>You can find the Chatbot ID in the Chatbot settings under the Settings tab.</Tip>
+  </Step>
+</Steps>
+  </Tab>
+  
+</Tabs>

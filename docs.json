@@ -17,12 +17,27 @@
             "group": "Get Started",
             "pages": [
               "introduction"
-                
+            
+
+            ]
+          },
+          {
+            "group": "Chatbot",
+            "pages": [
+              "get_start",
+              "quick_start",
+              "low_code",
+              "customization",
+              "identify_user"
+
             ]
           }
           
+          
         ]
+        
       },
+      
       {
         "tab": "API Reference",
         "groups": [
