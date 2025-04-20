@@ -16,19 +16,24 @@
           {
             "group": "Get Started",
             "pages": [
-              "introduction"
+              "introduction",
+              { "group": "Chatbot", "pages": [
+                "get_start",
+                "quick_start",
+                "low_code",
+                "customization",
+                "identify_user"
+  
+              ] },
+              { "group": "Ticket", "pages": [
+                "getstart",
+                "hosted_ticekt_form",
+                "embeded",
+                "formfield",
+                "ticket_integration"
+  
+              ] }
             
-
-            ]
-          },
-          {
-            "group": "Chatbot",
-            "pages": [
-              "get_start",
-              "quick_start",
-              "low_code",
-              "customization",
-              "identify_user"
 
             ]
           }

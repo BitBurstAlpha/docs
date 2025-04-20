@@ -1,0 +1,46 @@
+---
+title: "Hosted Ticket Form"
+description: "All ticket forms are available from LEXI Hosted URL."
+---
+
+You can find your ticket form on:
+
+<Check>https://hosted.LEXI.ai/tickets/YOUR-TICKET-FORM-ID</Check>
+
+<Note>You can find the Ticket Form ID in the Ticket Form settings under the Settings tab.</Note>
+
+From this page, users can create new tickets and view their existing tickets.
+The easiest way to get started, is to simply redirect the user to this page from within your app or website.
+
+# Identify a user
+In order for a user to view their existing tickets, they need to be identified.
+When you send the user to the hosted ticket form, you can pass the user's information as query parameters.
+
+<Check>https://hosted.LEXI.ai/tickets/YOUR-TICKET-FORM-ID</Check>
+
+<Note>If you do not provide a user ID as a query paremeter, LEXI will generate one for you.</Note>
+
+# Additional parameters
+In addition to the user_id parameter, you can also pass the following parameters:
+
+- **user_email**: The user's email address.
+- **user_name**: The user's username.
+- **profile_image_url**: The user's profile image URL.
+
+Below is a full example of how to prepare the Hosted URL for a user in JavaScript
+
+```javascript javascript
+const params = new URLSearchParams();
+ 
+// Prepare the query parameters
+params.append('user_id', 'abc1234');
+params.append('email', 'john@doe.com');
+params.append('username', 'John Doe');
+params.append('profile_image_url', 'https://example.com/profile.jpg');
+ 
+// Create the Hosted URL
+const url = `https://hosted.lexi.ai/tickets/YOUR-TICKET-FORM-ID?${params.toString()}`;
+ 
+// Redirect the user to the Hosted URL
+window.location.href = url;
+```

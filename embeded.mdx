@@ -1,0 +1,122 @@
+---
+title: "Embedding in your app"
+description: "Embedding the ticket system in your app is similar to adding the Chatbot using the low-code solution.We can embed the ticket elements using either HTML or React."
+---
+
+Specifically, we need to add two elements:
+- The form to create a ticket
+- A table showing the tickets
+
+# Create a ticket form
+The form to create a ticket is a simple HTML and React form that can be added to your app.
+
+To create a ticket, we need to add the CreateTicket(specify as component) component.
+
+<CodeGroup>
+
+```html HTML
+<script async type="text/javascript" src="https://client.lexi.ai/create-ticket.ab.js"></script>
+ 
+<ab-create-ticket ticketFormID="YOUR-TICKET-FORM-ID" userID="USER-ID">
+  <button>Create ticket</button>
+</ab-create-ticket>
+```
+
+```javascript React
+import { CreateTicket } from '@lexi/create-ticket';
+ 
+<CreateTicket ticketFormID="YOUR-TICKET-FORM-ID" userID="USER-ID">
+  <button>Create ticket</button>
+</CreateTicket>
+```
+
+</CodeGroup>
+
+<Note>You can find the Ticket Form ID in the Ticket Form settings under the Settings tab.</Note>
+
+# Display tickets ina table
+To display the tickets in a table, we need to add the `<ab-tickets-table></ab-tickets-table>` element.
+
+<CodeGroup>
+```html HTML
+<script async type="text/javascript" src="https://client.lexi.ai/tickets-table.ab.js"></script>
+ 
+<ab-tickets-table ticketFormID="YOUR-TICKET-FORM-ID" userID="USER-ID"></ab-tickets-table>
+```
+
+```javascript React
+import { TicketsTable } from '@lexi/tickets-table';
+ 
+<TicketsTable ticketFormID="YOUR-TICKET-FORM-ID" userID="USER-ID" />
+```
+
+</CodeGroup>
+
+This will render a table showing the tickets for the user with the ID USER-ID.
+
+If you want to only display tickets with a specific status, you can include these statuses using the status attribute.
+
+```javascript React
+import { TicketsTable } from '@aidbase/tickets-table';
+ 
+<TicketsTable
+  ticketFormID="YOUR-TICKET-FORM-ID"
+  userID="USER-ID"
+  status="OPEN,ASSIGNED,NEED_MORE_INFO"
+/>
+```
+
+# Display a single ticket
+To display a single ticket, we need to add the `<ab-ticket></ab-ticket>` element.
+<CodeGroup>
+
+```html HTML
+<script async type="text/javascript" src="https://client.aidbase.ai/ticket.ab.js"></script>
+ 
+<ab-ticket ticketFormID="YOUR-TICKET-FORM-ID" ticketID="TICKET-ID">
+  <button>Open ticket</button>
+</ab-ticket>
+```
+
+```javascript React
+import { Ticket } from '@lexi/ticket';
+ 
+<Ticket ticketFormID="YOUR-TICKET-FORM-ID" ticketID="TICKET-ID">
+  <button>Open ticket</button>
+</Ticket>
+```
+
+</CodeGroup>
+
+The TICKET-ID should be the ID of the ticket you want to display.
+This ID can be found in on the Tickets page in the LEXI Dashboard for a given ticket.
+
+It can also be retrieved through the payload of a webhook.
+
+# Additional user information
+In addition to the userID, you can also include username, email and profileImageURL.
+We recommend including as many of them as you have available.
+
+<CodeGroup>
+
+```html HTML
+<ab-tickets-table
+  ticketFormID="YOUR-TICKET-FORM-ID"
+  userID="USER-ID"
+  username="John Doe"
+  email="john@doe.com"
+  profileImageURL="https://example.com/profile-image.png"
+></ab-tickets-table>
+```
+
+```javascript React
+<TicketsTable
+  ticketFormID="YOUR-TICKET-FORM-ID"
+  userID="USER-ID"
+  username="John Doe"
+  email="john@doe.com"
+  profileImageURL="https://example.com/profile-image.png"
+/>
+```
+
+</CodeGroup>
