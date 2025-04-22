@@ -36,6 +36,21 @@
             
 
             ]
+          },
+          {
+            "group": "Setup guides",
+            "pages": [
+              { "group": "Knowledge", "pages": [
+                "addknowledge"
+  
+              ] },
+              { "group": "Chatbot", "pages": [
+                "chatbot_getstart",
+                "connect_ticket"
+              ] }
+            
+
+            ]
           }
           
           
